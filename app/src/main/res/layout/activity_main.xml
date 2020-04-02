@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/programView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perceptron"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <EditText
+        android:id="@+id/rateNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Learning rate"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/solveButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/thresholdNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Threshold"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/rateNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/pointsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:text="Points:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/programView" />
+
+    <EditText
+        android:id="@+id/iterationsNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Number of iterations"
+        android:inputType="numberDecimal"
+        android:numeric="integer|decimal"
+        app:layout_constraintBottom_toTopOf="@+id/thresholdNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/pointAView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:text="A(0, 6)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointsView" />
+
+    <TextView
+        android:id="@+id/pointBView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:text="B(1, 5)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointAView" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        android:text="C(3, 3)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointBView" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        android:text="D(2, 4)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/expectedView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:text="Expected class (0 or 1)"
+        app:layout_constraintStart_toEndOf="@+id/pointsView"
+        app:layout_constraintTop_toBottomOf="@+id/programView" />
+
+    <TextView
+        android:id="@+id/actualView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:text="Actual class"
+        app:layout_constraintStart_toEndOf="@+id/expectedView"
+        app:layout_constraintTop_toBottomOf="@+id/programView" />
+
+    <EditText
+        android:id="@+id/expectedANumber"
+        android:layout_width="64dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:numeric="integer|decimal"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/pointAView"
+        app:layout_constraintTop_toBottomOf="@+id/expectedView" />
+
+    <EditText
+        android:id="@+id/expectedCNumber"
+        android:layout_width="64dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:numeric="integer|decimal"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/pointAView"
+        app:layout_constraintTop_toBottomOf="@+id/expectedBNumber" />
+
+    <EditText
+        android:id="@+id/expectedDNumber"
+        android:layout_width="64dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:numeric="integer|decimal"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/pointAView"
+        app:layout_constraintTop_toBottomOf="@+id/expectedCNumber" />
+
+    <EditText
+        android:id="@+id/expectedBNumber"
+        android:layout_width="64dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:numeric="integer|decimal"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/pointAView"
+        app:layout_constraintTop_toBottomOf="@+id/expectedANumber" />
+
+    <TextView
+        android:id="@+id/actualAView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        app:layout_constraintStart_toEndOf="@+id/expectedANumber"
+        app:layout_constraintTop_toBottomOf="@+id/actualView" />
+
+    <TextView
+        android:id="@+id/actualBView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/expectedANumber"
+        app:layout_constraintTop_toBottomOf="@+id/actualAView" />
+
+    <TextView
+        android:id="@+id/actualCView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/expectedCNumber"
+        app:layout_constraintTop_toBottomOf="@+id/actualBView" />
+
+    <TextView
+        android:id="@+id/actualDView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/expectedDNumber"
+        app:layout_constraintTop_toBottomOf="@+id/actualCView" />
+
+    <Button
+        android:id="@+id/solveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:onClick="onSolveClick"
+        android:text="Solve"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/weightsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
